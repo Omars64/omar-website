@@ -1,223 +1,176 @@
+/* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
-/* General Styles */
+/* Root Theme */
+:root {
+  --bg-light: #f7f9fc;
+  --bg-dark: #1a1a1a;
+  --text-light: #2d2d2d;
+  --text-dark: #f1f1f1;
+  --accent: #e63946;
+  --nav-bg-light: #ffffff;
+  --nav-bg-dark: #2a2a2a;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #2d2d2d;
-    background: linear-gradient(to bottom right, #f7f9fc, #eaf0f7);
-    scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.4s ease;
+  scroll-behavior: smooth;
 }
 
 nav {
-    background-color: #1d3557;
-    color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: var(--nav-bg-light);
+  color: var(--text-light);
+  padding: 15px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: background-color 0.4s;
+}
+
+[data-theme="dark"] nav {
+  background-color: var(--nav-bg-dark);
+  color: var(--text-dark);
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
-nav ul li {
-    margin: 0 10px;
+nav ul li a, nav ul li button {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-nav ul li a {
-    color: #fff;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #a8dadc;
-}
-
-.profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
+nav ul li a:hover, nav ul li button:hover {
+  color: var(--accent);
 }
 
 header {
-    background-color: #fff;
-    text-align: center;
-    padding: 50px 20px;
+  text-align: center;
+  padding: 50px 20px;
 }
 
-header h1 {
-    margin: 0;
-    color: #e63946;
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
-header p {
-    font-size: 18px;
-    color: #333;
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 .container {
-    background-color: #ffffffcc;
-    margin: 30px auto;
-    padding: 30px;
-    max-width: 900px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  background-color: #ffffffcc;
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 900px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: background-color 0.4s;
+}
+
+[data-theme="dark"] .container {
+  background-color: #2e2e2ecc;
 }
 
 h2 {
-    color: #1d3557;
-    font-size: 28px;
-    margin-bottom: 20px;
-    border-left: 5px solid #e63946;
-    padding-left: 15px;
-}
-
-/* Summary Section Styling */
-.summary-description {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.summary-description h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.summary-description p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-h2 {
-    color: #e63946;
-}
-
-.job, .education {
-    margin-bottom: 20px;
-}
-
-/* Job Description Section */
-.job-description {
-    margin-bottom: 30px;
-    position: relative;
-    padding-left: 70px;
-}
-
-.job-description img.job-logo {
-    width: 50px;
-    height: auto;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.job-description ul li {
-    background-color: #e63946;
-    color: white;
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.job-description ul li::marker {
-    color: black;
+  color: var(--accent);
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--accent);
+  padding-left: 15px;
 }
 
 ul {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-a {
-    color: #e63946;
-    text-decoration: none;
+.job-description, .education {
+  margin-bottom: 30px;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Education Section Styling */
-.education {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+.job-logo, .education-logo {
+  width: 60px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .education-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.education-logo {
-    width: 100px;
-    height: auto;
-    border-radius: 8px;
-    margin-right: 20px;
+.education-content img {
+  max-height: 60px;
 }
 
-/* Responsive Design */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
+  .education-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    nav ul li {
-        margin: 5px 0;
-    }
+  nav ul {
+    flex-direction: column;
+  }
 
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .container {
-        width: 95%;
-    }
-
-    .job-description {
-        padding-left: 0;
-    }
-
-    .job-description img.job-logo {
-        position: static;
-        margin-bottom: 10px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .education-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .education-logo {
-        margin-bottom: 10px;
-    }
+  .container {
+    width: 95%;
+  }
 }

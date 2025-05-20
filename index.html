@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Solanki - Junior Software Engineer</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omar Solanki - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme-toggle">🌙</button></li>
+    </ul>
+  </nav>
 
-    <!-- Header Section -->
-    <header id="home">
-        <img src="dp-blue.jpg" alt="Omar Solanki" class="profile-img">
-        <h1>Omar Solanki</h1>
-        <p>Jr. Software Engineer @ DPSKW | Python | Javascript | MySQL | MSSQL</p>
-    </header>
+  <!-- Header -->
+  <header id="home">
+    <img src="dp-blue.jpg" alt="Omar Solanki" class="profile-img" />
+    <h1>Omar Solanki</h1>
+    <p>Jr. Software Engineer @ DPSKW | Python | JavaScript | MySQL | MSSQL</p>
+  </header>
 
-<!-- Summary Section -->
-<section id="summary" class="container">
+  <!-- Summary -->
+  <section id="summary" class="container">
     <div class="summary-description">
-        <h2>Summary</h2>
-        <p>Omar Solanki | Computer Science Graduate | JNU Rajasthan</p>
-        <p>Proficient in Python (Web Scraping, Data Scraping, Web Automation), MySQL, Unity, and JavaScript. Continuous Learner | Team Player | Problem Solver | Dedicated to Personal & Professional Growth. Currently working as a Jr. Software Engineer at DPSKW. Eager to contribute data-driven solutions to complex problems, fostering business growth, and societal impact.</p>
-        <p>Let's Connect! Open to new opportunities and collaborations in the exciting realm of Software Engineering.</p>
+      <h2>Summary</h2>
+      <p>Computer Science Graduate | JNU Rajasthan</p>
+      <p>Proficient in Python (Web Scraping, Automation), MySQL, Unity, and JavaScript. Passionate problem solver and continuous learner.</p>
     </div>
-</section>
-
+  </section>
 
     <!-- Experience Section -->
     <section id="experience" class="container">
@@ -95,9 +95,7 @@
         <li>Prepared regular reports for management, highlighting trends and insights to support business decisions.</li>
             </ul>
         </div>
-        
-        <hr>
-    </section>
+
     <section id="education" class="container">
         <h2>Education</h2>
         <div class="education">
@@ -140,9 +138,8 @@
             </div>
         </div>
     </section>
-    
-    
-    <!-- Skills Section -->
+
+   <!-- Skills Section -->
     <section id="skills" class="container">
         <h2>Top Skills</h2>
         <ul>
@@ -168,23 +165,37 @@
             <li>Hafiz-e-Qur'an</li>
         </ul>
     </section>
-<!-- Contact Section -->
-<section id="contact" class="container">
+
+        <h2>Certifications</h2>
+        <ul>
+            <li>The Complete Blue prism Masterclass: Bigger to Expert</li>
+            <li>Introduction to Deep Learning in Python</li>
+            <li>Certificate of Memorization of the Holy Quran</li>
+        </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container">
     <h2>Contact</h2>
-    <div class="contact-details">
-        <p><strong>Location:</strong> Salmiya, Kuwait</p>
-        <p><strong>Email:</strong> <a href="mailto:omarsolanki35@gmail.com">omarsolanki35@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/omar-solanki-57513b27b" target="_blank">LinkedIn Profile</a></p>
-    </div>
-</section>
+    <p><strong>Location:</strong> Salmiya, Kuwait</p>
+    <p><strong>Email:</strong> <a href="mailto:omarsolanki35@gmail.com">omarsolanki35@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/omar-solanki-57513b27b" target="_blank">LinkedIn</a></p>
+  </section>
 
-<!-- Footer Section -->
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Omar Solanki. All rights reserved.</p>
-        <p><a href="#home">Back to Top</a></p>
-    </div>
-</footer>
+  <!-- Footer -->
+  <footer class="container">
+    <p>&copy; 2025 Omar Solanki</p>
+    <p><a href="#home">Back to Top</a></p>
+  </footer>
 
+  <!-- Light/Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+      toggleBtn.textContent = html.dataset.theme === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
